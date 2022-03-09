@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import IconButton from "@mui/material/IconButton"
 import MenuIcon from "@mui/icons-material/Menu"
+import styled from "@emotion/styled"
 
 export default function NavigationBar() {
   return (
@@ -23,16 +24,21 @@ export default function NavigationBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            App
           </Typography>
-          <Link to="/home">
-            <Button color="info">Home</Button>
-          </Link>
-          <Link to="/about">
-            <Button color="info">About</Button>
-          </Link>
+          <StyledLink to="/home">
+            <Button color="inherit">Home</Button>
+          </StyledLink>
+          <StyledLink to="/about">
+            <Button color="inherit">About</Button>
+          </StyledLink>
         </Toolbar>
       </AppBar>
     </Box>
   )
 }
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #fff;
+`
